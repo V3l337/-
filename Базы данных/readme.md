@@ -45,9 +45,9 @@ CREATE TABLE Адреса_филиалов (
 );
 ```
 ```sql
-CREATE TABLE Назначения_проектов (
-    идентификатор SERIAL PRIMARY KEY,
+CREATE TABLE Назначения_на_проекты (
     сотрудник_id INTEGER REFERENCES Сотрудники(идентификатор),
-    проект_id INTEGER REFERENCES Проекты(идентификатор)
+    проект_id INTEGER REFERENCES Проекты(идентификатор),
+    PRIMARY KEY (сотрудник_id, проект_id)
 );
 ```
