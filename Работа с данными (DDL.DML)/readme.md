@@ -49,6 +49,24 @@ sudo docker exec -i mysql-container mysql -u sys_temp -p < sakila-db/sakila-data
 ![](screenshot/3.png)
 
 
-
+# Task 2
+```
+Название таблицы | Название первичного ключа
+-------------------------------------------
+actor            | actor_id
+address          | address_id
+category         | category_id
+city             | city_id
+country          | country_id
+customer         | customer_id
+film             | film_id
+film_actor       | film_id, actor_id
+film_category    | film_id, category_id
+inventory        | inventory_id
+language         | language_id
+payment          | payment_id
+rental           | rental_id
+staff            | staff_id
+store            | store_
 
 
