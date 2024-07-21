@@ -6,7 +6,7 @@ WHERE district LIKE 'K%a'
 AND REPLACE(district, ' ', '') = district;  ## Проверяет, что в значении district нет пробелов. Функция REPLACE удаляет все пробелы, и если результат остается таким же, это означает, что пробелов не было 
 ```
 
-
+![](screenshots/1.png)
 
 # TASK 2
 ```sql
@@ -16,7 +16,7 @@ WHERE payment_date BETWEEN '2005-06-15' and '2005-06-18'
 and amount > 10.00
 ```
 
-
+![](screenshots/2.png)
 
 # TASK 3
 ```sql
@@ -26,7 +26,7 @@ ORDER BY rental_date DESC
 limit 5
 ```
 
-
+![](screenshots/3.png)
 
 # TASK 4
 ```sql
@@ -38,7 +38,7 @@ WHERE active = 1
 and first_name = 'kelly' OR first_name = 'whille'
 ```
 
-
+![](screenshots/4.png)
 
 # TASK 5
 ```sql
@@ -47,8 +47,6 @@ SELECT
 	SUBSTRING_INDEX(email, '@', -1)
 FROM customer c
 ```
-
-
 
 # TASK 6
 ```sql
@@ -59,7 +57,6 @@ FROM customer
 ```
 
 
-
-
+![](screenshots/5.png)
 
 
