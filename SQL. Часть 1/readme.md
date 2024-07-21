@@ -12,7 +12,7 @@ AND REPLACE(district, ' ', '') = district;  ## Проверяет, что в з�
 ```sql
 SELECT *
 FROM payment p 
-WHERE payment_date BETWEEN '2005-06-15' and '2005-06-18'
+WHERE payment_date BETWEEN '2005-06-15 00:00:00' and '2005-06-18 23:59:59'
 and amount > 10.00
 ```
 
