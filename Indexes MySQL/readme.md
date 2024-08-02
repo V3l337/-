@@ -41,7 +41,7 @@ WHERE
 3.
 ```sql
 select 
-	concat(c.last_name, ' ', c.first_name), 
+	concat(c.last_name, ' ', c.first_name) as cname, 
 	sum(p.amount) over (partition by c.customer_id, f.title)
 from 
 	payment p
@@ -50,8 +50,7 @@ join customer c ON r.customer_id = c.customer_id
 join inventory i ON c.store_id = i.store_id 
 join film f ON i.film_id = f.film_id
 where 
-	p.payment_date >= "2005-07-30 00:00:00" AND 
-	p.payment_date < "2005-07-31 00:00:00";
+	p.payment_date BETWEEN "2005-07-30 00:00:00" AND "2005-07-30 23:59:59"
 ```
 
 4. Вывод нового запроса
