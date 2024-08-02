@@ -36,9 +36,9 @@ WHERE
 ```
    
 
-2. -Отсутствие индексов, замедляет выполнение запросов. Фильтрация по функции date тоже странная
+1. Отсутствие индексов, замедляет выполнение запросов. Фильтрация по функции date тоже странная
 
-3.
+2.
 ```sql
 select 
 	concat(c.last_name, ' ', c.first_name) as cname, 
@@ -53,7 +53,7 @@ where
 	p.payment_date BETWEEN "2005-07-30 00:00:00" AND "2005-07-30 23:59:59"
 ```
 
-4. Вывод нового запроса
+3. Вывод нового запроса
 ```
 -> Window aggregate with buffering: sum(payment.amount) OVER (PARTITION BY c.customer_id,f.title )   (actual time=8934..32140 rows=1.45e+6 loops=1)
     -> Sort: c.customer_id, f.title  (actual time=8934..9365 rows=1.45e+6 loops=1)
