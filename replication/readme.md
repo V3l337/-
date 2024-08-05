@@ -8,7 +8,7 @@
 # Task 2
 #### Выполните конфигурацию master-slave репликации, примером можно пользоваться из лекции.
 
-1. Создам файл с поднятем 2 контейнеров и сетью
+1. Создам файл с поднятем 2 контейнеров
 [.yaml](file+screenshots/docker-compose.yaml)
 
 2. docker exec -it mysql-master mysql -u root -p # Создадим пользователям под репликаю и дадим права под это. Проверим что настроили.
@@ -49,7 +49,7 @@ SHOW SLAVE STATUS\G
 ```
 ![](file+screenshots/slave%20status.png)
 
-6. Проверяю с помощью создания ДБ
+6. Проверяю с помощью создания ДБ на мастере
 ```sql
 CREATE database world;
 USE world;
