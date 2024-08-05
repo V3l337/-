@@ -9,6 +9,7 @@
 #### Выполните конфигурацию master-slave репликации, примером можно пользоваться из лекции.
 
 1. Создам файл с поднятем 2 контейнеров и сетью
+[.yaml](file+screenshots/docker-compose.yaml)
 
 2. docker exec -it mysql-master mysql -u root -p # Создадим пользователям под репликаю и дадим права под это. Проверим что настроили.
 ```mysql
@@ -21,6 +22,8 @@ SHOW VARIABLES LIKE 'log_bin';
 перезагрузить контейнер!
 SHOW MASTER STATUS;
 ```
+![](file+screenshots/master%20status.png)
+
 3. docker exec -it mysql-slave /bin/bash
 4. изменим/добавим в файл /etc/my.cnf
 ```
@@ -44,6 +47,8 @@ START SLAVE;
 ```mysql
 SHOW SLAVE STATUS\G
 ```
+![](file+screenshots/slave%20status.png)
+
 6. Проверяю с помощью создания ДБ
 ```sql
 CREATE database world;
@@ -56,5 +61,5 @@ INSERT INTO test_replication (data) VALUES ('Test data 1');
 INSERT INTO test_replication (data) VALUES ('Test data 2');
 ```
 7. Проверил на SLAVE что БД отоброжается, а значит репликация работает.
-
+![](file+screenshots/SHOW%20BD%20in%20SLAVE.png)
 
