@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  mysql-master:
+    image: mysql:8.0
+    container_name: mysql-master
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: sys_temp
+      MYSQL_PASSWORD: tmp123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./my.cnf:/etc/my.cnf
+      - mysql-master-data:/var/lib/mysql
+
+  mysql-slave:
+    image: mysql:8.0
+    container_name: mysql-slave
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: sys_temp
+      MYSQL_PASSWORD: tmp123
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./my.cnf:/etc/my.cnf
+      - mysql-slave-data:/var/lib/mysql
+
+volumes:
+  mysql-master-data:
+  mysql-slave-data:
